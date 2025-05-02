@@ -94,4 +94,25 @@ public class ProductServlet extends HttpServlet {
             response.getWriter().println("{\"message\": \"❌ Product not found.\"}");
         }
     }
+
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        int price = Integer.parseInt(request.getParameter("price"));
+
+        Product product = products.get(id);
+
+        response.setContentType("application/json");
+
+        if (product == null) {
+            response.getWriter().println("{\"message\": \"❌ Product not found.\"}");
+            return;
+        }
+
+        product.setName(name);
+        product.setPrice(price);
+        response.getWriter().println("{\"message\": \"✅ Product updated,ID: " + id+"\"}");
+    }
 }
