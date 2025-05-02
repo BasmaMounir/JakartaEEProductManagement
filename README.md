@@ -18,17 +18,24 @@ This is a simple Java web project that allows you to manage products using Servl
 
 ## 📄 GET All Products
 **Endpoint:**  
-`GET http:http://localhost:8080/product-manager/product
+`GET http://localhost:8080/product-manager/product
+
+<img src="https://github.com/BasmaMounir/JakartaEEProductManagement/blob/development/images/get.png?raw=true" alt="Get" width="400"/>
+
 
 ## ➕ Add Product
 **Endpoint:**  
 `POST http://localhost:8080/product?name={productName},price={productPrice}`
+
+<img src="https://github.com/BasmaMounir/JakartaEEProductManagement/blob/development/images/post.png?raw=true" alt="Add" width="400"/>
 
 ## 🗑️ Delete Product
 **Endpoint:**  
 `DELETE http://localhost:8080/product?id={productId}`
 **Query Parameter:**
 - `id` (int): ID of the product to delete
+  
+<img src="https://github.com/BasmaMounir/JakartaEEProductManagement/blob/development/images/delete.png?raw=true" alt="Delete" width="400"/>
 
 ## ✏️ Update Product
 **Endpoint:**  
@@ -37,3 +44,6 @@ This is a simple Java web project that allows you to manage products using Servl
 - `id` (int): ID of the product to update
 - `name` (String): New name
 - `price` (int): New price
+  
+<img src="https://github.com/BasmaMounir/JakartaEEProductManagement/blob/development/images/update.png?raw=true" alt="Update" width="400"/>
+
