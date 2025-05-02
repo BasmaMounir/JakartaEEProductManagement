@@ -22,4 +22,11 @@ This is a simple Java web project that allows you to manage products using Servl
 
 ## ➕ Add Product
 **Endpoint:**  
-`POST http://localhost:8080/product`
+`POST http://localhost:8080/product?name={productName},price={productPrice}`
+
+## 🗑️ Delete Product
+**Endpoint:**  
+`DELETE http://localhost:8080/product?id={productId}`
+**Query Parameter:**
+- `id` (int): ID of the product to delete
+
