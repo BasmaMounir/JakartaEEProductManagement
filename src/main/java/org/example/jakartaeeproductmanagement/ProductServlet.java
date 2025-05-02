@@ -80,4 +80,18 @@ public class ProductServlet extends HttpServlet {
             response.getWriter().println("{\"message\": \"✅ Product Added!, ID: " + product.getId()+"\"}");
         }
     }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product removed = products.remove(id);
+
+        response.setContentType("application/json");
+        if (removed != null) {
+            response.getWriter().println("{\"message\": \"✅ Product with ID " + id + " deleted.\"}");
+        } else {
+            response.getWriter().println("{\"message\": \"❌ Product not found.\"}");
+        }
+    }
 }
