@@ -57,4 +57,27 @@ public class ProductServlet extends HttpServlet {
         });
         out.println("]");
     }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String name = request.getParameter("name");
+        int price = Integer.parseInt(request.getParameter("price"));
+
+        Product product = new Product(name, price);
+        products.put(product.getId(), product);
+        if (name == null || name.trim().isEmpty()) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().println("{\"error\": \"Name cannot be empty\"}");
+            return;
+        }
+        if (price < 0) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().println("{\"error\": \"Price cannot be negative\"}");
+            return;
+        }else
+        {response.setContentType("application/json");
+            response.getWriter().println("{\"message\": \"✅ Product Added!, ID: " + product.getId()+"\"}");
+        }
+    }
 }
