@@ -30,3 +30,10 @@ This is a simple Java web project that allows you to manage products using Servl
 **Query Parameter:**
 - `id` (int): ID of the product to delete
 
+## ✏️ Update Product
+**Endpoint:**  
+`PUT http://localhost:8080/product?id={id}&name={newName}&price={newPrice}`
+**Query Parameters:**
+- `id` (int): ID of the product to update
+- `name` (String): New name
+- `price` (int): New price
